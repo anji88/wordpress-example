@@ -1,21 +1,5 @@
-// Breakpoints
-// Note: Consider using content based media queries
-// Device based media queries
-@mixin layout($number){
-	@media (max-width: #{$number}px){
-		@content;
-	}
-}
+$fs: 16px;
 
-@mixin minLayout($number) {
-    @media (min-width: #{$number}px) {
-        @content;
-    }
-}
-// color variables start
-$cblue: #002c52;
-$cblack: #1a1a1d;
-$cwhite: #fff;
-// color variables end
+$lato: "Lato"; // light-300, normal-400, medium-500, semibold-600 bold-700
 
-// add here further breakpoint variables or modify the above variables
+// colors

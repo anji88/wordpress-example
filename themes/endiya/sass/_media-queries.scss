@@ -1,0 +1,10 @@
+@mixin layout($num){
+    @media (max-width: #{$num}px){
+        @content;
+    }
+  }
+  @mixin minLayout($num){
+    @media (min-width: #{$num}px){
+        @content;
+    }
+  }

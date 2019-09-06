@@ -1,0 +1,27 @@
+.header{
+    display: flex;
+    max-width: 1280px;
+    width: 100%;
+    margin: 0px auto;
+    padding: 20px 40px 0 40px;
+    justify-content: space-between;
+    align-items: center;
+    &__logo{
+        max-width: 183px;
+        width: 100%;
+    }
+    &__links{
+        ul{
+            display: flex;
+        
+        }
+        li{
+            padding: 0 10px;
+        }
+        a{
+            padding: 0px 8px 8px 8px;
+            color: rgba(0, 0, 0, 0.8);
+            font-size: 14px;
+        }
+    }
+}

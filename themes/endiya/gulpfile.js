@@ -27,16 +27,16 @@ let config = require('./config.json');
 
 // Variables
 
-var IMAGES_PATH = 'dist/assets/images/';
+var IMAGES_PATH = 'assets/images/';
 var EXT_HTML = ['.pug', '.html'];
 var SVGS_SOURCE_PATH = 'bundle-svgs/';
 var SVGS_ALL_PATH = 'bundle-svgs/**/*.svg';
 var SASS_PATH = 'sass/**/*.scss';
-var CSS_PATH = 'dist/assets/css/';
+var CSS_PATH = 'assets/css/';
 var ASSETS_PATH = "assets/";
 var PRE_MAIN_TEMPLATES = (ext) => `templates/**/!(_)*${ext}`;
 var PRE_ALL_TEMPLATES = (ext) => `templates/**/*${ext}`;
-var JS_PATH = 'dist/assets/js/';
+var JS_PATH = 'assets/js/';
 
 var removeHtmlExtension = false; // Make it true to remove .html extension from pre compiled html templates
 
@@ -228,4 +228,4 @@ gulp.task('generate-svg', generateSvg);
 // Dev Tasks
 gulp.task('run', gulp.series('generate-svg', 'sass', 'templates'));
 gulp.task('watch', gulp.series('run', watchChanges));
-gulp.task("default", gulp.series('run', gulp.parallel('watch', browserSync)));
+gulp.task("default", gulp.series('run', gulp.parallel('watch')));
