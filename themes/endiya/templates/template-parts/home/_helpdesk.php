@@ -1,54 +1,50 @@
-<!-- help desk  -->
-<?php
-   $pathUrl = get_stylesheet_directory_uri();
-   ?>
-<div class="help-desk">
-   <div class="help-desk__card-wapper">
-      <div class="help-desk__main padding-lr">
-         <div class="help-desk__img">
-            <img class="lazyload browserSpecificImage" data-src="<?php echo  $pathUrl; ?>/assets/images/help-desk.png" alt="Spiceworks Help Desk Screenshot">
-            <div class="mobile">
-            <img  class="lazyload" data-src="<?php echo $pathUrl; ?>/assets/images/mobile.png" alt="Spiceworks Help Desk Screenshot">
-         </div>
-         </div>
-         <div class="help-desk__content">
-            <div class="help-desk__heading">
-               <h1 class="help-desk__heading__text">Launch Help Desk</h1>
+<!-- tech insights started-->
+<div class="insights">
+   <div class="insights__main padding-lr">
+      <h1 class="insights__heading"> Tech Insights</h1>
+      <div class="content-des">Stay on top of IT! Check out the latest data on trending
+tech topics.</div>
+      <div class="insights__block">
+      <?php
+            $args = array(
+            'post_type' => 'tech_insights',
+            'paged' => get_query_var( 'paged' ),
+            'orderby' => 'publish_date',
+            'order' => 'ASC',
+            'posts_per_page' => 3,
+            );
+            $wp_query = new WP_Query($args);
+            while ( $wp_query->have_posts() ) : $wp_query->the_post();
+            ?>
+         <!-- insights block card started-->
+         <div class="insights__blog">
+            <div class="insights__blog-img">
+               <img class="lazyload" data-src="<?php echo get_field('tech_insight_img'); ?>" alt="blog">
             </div>
-            <div class="help-desk__full-conent"> Understand the technology needs and challenges of your business. Easy to Use. Up and Running in Minutes. Built for IT.</p>
-            </div>
-            <div class="help-desk__links">
-                <?php $launchHelpDeskLink = "https://on.spiceworks.com/registrations/new?utm_medium=internal&utm_source=www_homepage&utm_campaign=new_daily_destination_www_homepage&_ga=2.123681101.715809464.1551041881-1738401187.1540508754"; ?>
-               <a  href="<?php echo $launchHelpDeskLink; ?>" class="help-desk__button helpdesk-lanch-button" target="_self">Launch Help Desk</a>
-               <div class="help-desk__learnmore">
-                  <a href="https://www.spiceworks.com/free-help-desk-software/?utm_medium=internal&utm_source=www_homepage&utm_campaign=new_daily_destination_www_homepage" target="_self" class="help-desk__learnmore__text helpdesk-learn-more-button">Learn More >>
-                  </a>
+            <div class="insights__blog-data">
+               <div class="insights__blog-content">
+                  <div class="insights__blog-name m-show">SPICEWORKS BLOG</div>
+                  <div class="insights__blog-title"><?php echo get_the_title(); ?></div>
+                  <div class="insights__blog-text"> <?php echo get_the_content(); ?>
+                  </div>
+                  <div class="insights__blog-button-holder">
+                     <a href="<?php echo get_field('redirection_link'); ?>" target="_self">
+                     <button class="insights__blog-button-name">Read More</button>
+                     </a>
+                  </div>
                </div>
             </div>
          </div>
+         <?php endwhile ?>
+         <!-- insights block card ended-->
       </div>
    </div>
-   <div class="help-desk__card-wapper">
-      <div class="help-desk__main padding-lr">
-         <div class="help-desk__img">
-            <img class="lazyload browserSpecificImage" data-src="<?php echo $pathUrl; ?>/assets/images/Inventory.png" alt="Spiceworks Inventory Tool Screenshot">
-         </div>
-         <div class="help-desk__content">
-            <div class="help-desk__heading">
-               <h1 class="help-desk__heading__text">Manage Inventory</h1>
-            </div>
-            <div class="help-desk__full-conent">Discover the technologies in use within your organization. Device Inventory. Software tracking. Customized
-Reporting.
-            </div>
-            <div class="help-desk__links">
-               <?php $launchInventoryLink="https://apps.spiceworks.com/tools/device-inventory/login?utm_medium=internal&utm_source=www_homepage"; ?>
-               <a href="<?php echo $launchInventoryLink; ?>"  class="help-desk__button manage-inventory-button" target="_self">Launch Inventory</a>
-               <div class="help-desk__learnmore">
-                  <a href="https://www.spiceworks.com/free-pc-network-inventory-software/"   class="help-desk__learnmore__text manage-inventory-learn-more-button" target="_self">Learn More >>
-                  </a>
-               </div>
-            </div>
-         </div>
-      </div>
+   <!-- insights block card ended-->
+   <div class="insights__button-holder">
+    <a href="https://www.spiceworks.com/research/" target="_self" >
+      <button class="insights__button-text">Read IT Research >>  </button>
+      </a>
    </div>
 </div>
+</div>
+<!-- tech insights started-->

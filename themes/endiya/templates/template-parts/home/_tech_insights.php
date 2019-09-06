@@ -2,12 +2,9 @@
 <div class="insights">
    <div class="insights__main padding-lr">
       <h1 class="insights__heading"> Tech Insights</h1>
-      <div class="content-des">Stay on top of IT! Check out the latest data on trending
-tech topics.</div>
-      <div class="insights__block">
       <?php
             $args = array(
-            'post_type' => 'tech_insights',
+            'post_type' => 'welcome',
             'paged' => get_query_var( 'paged' ),
             'orderby' => 'publish_date',
             'order' => 'ASC',
@@ -18,22 +15,11 @@ tech topics.</div>
             ?>
          <!-- insights block card started-->
          <div class="insights__blog">
-            <div class="insights__blog-img">
-               <img class="lazyload" data-src="<?php echo get_field('tech_insight_img'); ?>" alt="blog">
-            </div>
-            <div class="insights__blog-data">
-               <div class="insights__blog-content">
-                  <div class="insights__blog-name m-show">SPICEWORKS BLOG</div>
-                  <div class="insights__blog-title"><?php echo get_the_title(); ?></div>
-                  <div class="insights__blog-text"> <?php echo get_the_content(); ?>
-                  </div>
-                  <div class="insights__blog-button-holder">
-                     <a href="<?php echo get_field('redirection_link'); ?>" target="_self">
-                     <button class="insights__blog-button-name">Read More</button>
-                     </a>
-                  </div>
-               </div>
-            </div>
+            <h1>
+            <?php echo get_field('sub_heading') ?>
+            </h1>
+            <?php echo get_field('title_des') ?>
+            <h2> </h2>
          </div>
          <?php endwhile ?>
          <!-- insights block card ended-->

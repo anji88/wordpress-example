@@ -1,0 +1,78 @@
+// footer styles are started
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid rgba(84,84,84,0.5);
+    padding: 9px 0px 9px 0px;
+    @include layout(767) {
+        flex-direction: column-reverse;
+    }
+    &__left {
+        p {
+            color: rgba(84, 84, 84, 0.7);
+            font-size: 12px;
+            @include layout(767) {
+                padding-top: 20px;
+            }
+        }
+    }
+    &__social-media {
+        display: flex;
+        align-content: center;
+    }
+
+    &__social-icon {
+        margin: 0 10px;
+
+        img {
+            width: 21px;
+        }
+    }
+
+    &__right {
+        display: flex;
+        border: none;
+
+    }
+
+    &__mail-input {
+        position: relative;
+        border-bottom: 1px solid rgba(84, 84, 84, 0.7);
+        margin-right: 20px;
+        padding-bottom: 3px;
+        &:after {
+            content: "";
+            display: inline-block;
+            width: 1px;
+            height: 13px;
+            background-color: rgb(173, 173, 173);
+            margin-right: 10px;
+            position: absolute;
+            top: 6px;
+            right: -24px;
+        }
+
+        input {
+            border: none;
+            color: rgba(84, 84, 84, 0.7);
+            font-size: 14px;
+            padding: 10px 27px 2px 0px;
+            &::placeholder {
+                color: rgba(84, 84, 84, 0.7);
+                font-size: 12px;
+                font-style: italic;
+            }
+        }
+
+        img {
+            width: 21px;
+            position: absolute;
+            top: 3px;
+            right: 0px;
+            cursor: pointer;
+            background: none;
+        }
+
+    }
+}

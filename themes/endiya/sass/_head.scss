@@ -1,27 +1,94 @@
-.header{
+.header {
     display: flex;
-    max-width: 1280px;
-    width: 100%;
-    margin: 0px auto;
-    padding: 20px 40px 0 40px;
+    margin-top: 20px;
     justify-content: space-between;
     align-items: center;
-    &__logo{
+
+    @include layout(1023) {
+        padding: 10px;
+        position: fixed;
+        background: #fff;
+    }
+
+    &__logo {
         max-width: 183px;
         width: 100%;
+
+        @include layout(1023) {
+            max-width: 160px;
+
+        }
+
+        @include layout(767) {
+            max-width: 130px;
+
+        }
     }
-    &__links{
-        ul{
+
+    &__nav {
+        &:hover {
+            @include layout(1023) {
+                .header__links {
+                    position: fixed;
+                    height: 100%;
+                    width: 100%;
+                    display: block;
+                    left: 0;
+                    background: #fff;
+                    top: 70px;
+                    overflow: auto;
+                  
+                }
+            }
+        }
+    }
+
+    &__links {
+        ul {
             display: flex;
-        
+            @include layout(1023) {
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 100px;
+
+            }
+
         }
-        li{
+
+        li {
             padding: 0 10px;
+            @include layout(1023) {
+                padding: 20px 0;
+            }
         }
-        a{
+
+        a {
             padding: 0px 8px 8px 8px;
             color: rgba(0, 0, 0, 0.8);
             font-size: 14px;
+            @at-root .active{
+                color: #000;
+                font-weight: 600;
+            }
+        }
+
+        @include layout(1023) {
+            display: none;
+        }
+    }
+
+    &__humbuger {
+        display: none;
+        span {
+            height: 2px;
+            width: 16px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 9px;
+            display: block;
+            margin-bottom: 3px;
+        }
+        @include layout(1023) {
+           display: block;
         }
     }
 }

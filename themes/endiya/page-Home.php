@@ -1,7 +1,7 @@
 
 
 <?php get_header(); ?>
-<?php  $svgName = "'Home'" ?>
+<?php  $svgName = "" ?>
 <script>
     var svgsToLoad = [<?php echo $svgName; ?>];
 </script>
